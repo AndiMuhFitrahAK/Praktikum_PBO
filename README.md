@@ -1,16 +1,15 @@
-# [INF2143] Proyek Sistem Produksi Musik
+# [INF2143] Proyek SOLID & Komunikasi Kode
 ## Pertemuan 12: Dokumentasi, Logging, dan Version Control
 
-### Deskripsi Proyek
-[cite_start]Proyek ini mengimplementasikan prinsip SOLID yang diperkuat dengan dokumentasi Docstring, sistem Logging profesional, dan manajemen riwayat menggunakan Git[cite: 16].
+### 📝 Deskripsi Proyek
+Proyek ini mendemonstrasikan implementasi prinsip **SOLID** (SRP, OCP, DIP) pada sistem produksi musik dengan menggunakan **Abstraction (Interface)** dan **Dependency Injection**. Kode ini telah ditingkatkan agar lebih komunikatif menggunakan Docstring dan Logging.
 
-### Fitur Utama
-- [cite_start]**Docstring**: Dokumentasi inline format Google Style untuk kemudahan kolaborasi[cite: 34].
-- [cite_start]**Logging**: Pencatatan aktivitas runtime (INFO/ERROR) menggantikan print()[cite: 24, 37].
-- [cite_start]**Git**: Pelacakan perubahan kode secara sistematis di GitHub[cite: 28].
+### 📂 Struktur File
+- `Tugas_Mandiri.py` : Kode inti yang sudah di-refactor, ditambahkan Docstring, dan Logging.
+- `README.md` : Dokumen panduan ini.
 
-### Cara Menjalankan
-1. [cite_start]Pastikan Python 3.x sudah terinstal[cite: 54].
+### ⚙️ Cara Menjalankan
+1. Pastikan Python 3.x terinstal di komputer Anda.
 2. Jalankan file utama melalui terminal:
    ```bash
    python Tugas_Mandiri.py
