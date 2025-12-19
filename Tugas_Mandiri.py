@@ -1,12 +1,12 @@
 import logging
 
-# Konfigurasi dasar: Mencatat Waktu - Level - Nama Logger - Pesan [cite: 38]
+# Konfigurasi dasar: Mencatat Waktu - Level - Nama Logger - Pesan
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
 )
 
-# Membuat logger khusus untuk sistem produksi musik kita [cite: 38]
+# Membuat logger khusus untuk sistem produksi musik kita
 LOGGER = logging.getLogger('MusicStudio')
 
 from abc import ABC, abstractmethod
@@ -50,12 +50,12 @@ class IMusicPublisher(ABC):
 class BassBoostEffect(IAudioEffect):
     def apply(self, song: Song):
         """Memberikan efek penguatan bass pada lagu."""
-        LOGGER.info(f"Audio Effect: Meningkatkan frekuensi Bass pada lagu '{song.title}'.") [cite: 39]
+        LOGGER.info(f"Audio Effect: Meningkatkan frekuensi Bass pada lagu '{song.title}'.")
 
 class SpotifyPublisher(IMusicPublisher):
     def upload(self, song: Song):
         """Mengunggah lagu yang sudah diproses ke Spotify."""
-        LOGGER.info(f"Publisher: Lagu '{song.title}' berhasil rilis di Spotify.") [cite: 39]
+        LOGGER.info(f"Publisher: Lagu '{song.title}' berhasil rilis di Spotify.")
 
 # --- KELAS KOORDINATOR (SRP & DIP) ---
 class MusicProductionSystem:
@@ -64,7 +64,7 @@ class MusicProductionSystem:
     Kelas ini memisahkan logika pemberian efek dan publikasi (memenuhi SRP).
     """
     def __init__(self, effect: IAudioEffect, publisher: IMusicPublisher):
-        """Menginisialisasi sistem produksi dengan dependensi yang diperlukan. [cite: 35]
+        """Menginisialisasi sistem produksi dengan dependensi yang diperlukan.
         
         Args:
             effect (IAudioEffect): Implementasi interface efek audio.
@@ -79,15 +79,15 @@ class MusicProductionSystem:
         Args:
             song (Song): Lagu mana yang mau kita produksi sekarang.
         """
-        LOGGER.info(f"Memulai produksi lagu: {song.title} oleh {song.artist}") [cite: 39]
+        LOGGER.info(f"Memulai produksi lagu: {song.title} oleh {song.artist}")
         
         try:
             self.effect.apply(song)
             song.is_processed = True
             self.publisher.upload(song)
-            LOGGER.info(f"Produksi selesai. '{song.title}' siap dipublikasikan.") [cite: 39]
+            LOGGER.info(f"Produksi selesai. '{song.title}' siap dipublikasikan.")
         except Exception as e:
-            LOGGER.error(f"Gagal memproses lagu {song.title}: {str(e)}") [cite: 39]
+            LOGGER.error(f"Gagal memproses lagu {song.title}: {str(e)}")
 
 # --- PROGRAM UTAMA --- 
 if __name__ == "__main__":
